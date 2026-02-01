@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine?</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      position: relative;
+      width: 300px;
+      height: 200px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background-color: #444;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my Valentine? 💖</h1>
+
+  <div class="buttons">
+    <button id="yes" onclick="yesClicked()">Yes 💕</button>
+    <button id="no" onmouseover="moveNo()">No 💔</button>
+  </div>
+
+  <script>
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+      const maxX = window.innerWidth - 100;
+      const maxY = window.innerHeight - 100;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      noBtn.style.left = randomX + "px";
+      noBtn.style.top = randomY + "px";
+    }
+
+    function yesClicked() {
+      document.body.innerHTML = "<h1 style='color:white'>Yayyy 😍 I knew it! 💘</h1>";
+    }
+  </script>
+
+</body>
+</html>
